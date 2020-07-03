@@ -15,12 +15,26 @@ class AddRemoveWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ActionWidget(iconData: Icons.remove),
+            ActionWidget(
+              iconData: Icons.remove,
+              onTap: _removeTap,
+            ),
             Container(width: 12.0),
-            ActionWidget(iconData: Icons.add),
+            ActionWidget(
+              iconData: Icons.add,
+              onTap: _addTap,
+            ),
           ],
         ),
       ),
     );
+  }
+
+  _removeTap() {
+    print('removeTapped');
+  }
+
+  _addTap() {
+    print('addTapped');
   }
 }

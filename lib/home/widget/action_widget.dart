@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class ActionWidget extends StatefulWidget {
   final IconData iconData;
+  final Function onTap;
 
-  ActionWidget({@required this.iconData});
+  ActionWidget({@required this.iconData, @required this.onTap});
 
   @override
   _ActionWidgetState createState() => _ActionWidgetState();
@@ -33,6 +34,7 @@ class _ActionWidgetState extends State<ActionWidget> {
       },
       onTapUp: (_) {
         _setColor();
+        widget.onTap();
       },
       onTapCancel: () {
         _setColor();
