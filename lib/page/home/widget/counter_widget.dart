@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_demo/provider/counter_holder.dart';
 
 class CounterWidget extends StatefulWidget {
   @override
@@ -8,6 +10,10 @@ class CounterWidget extends StatefulWidget {
 class _CounterWidgetState extends State<CounterWidget> {
   @override
   Widget build(BuildContext context) {
+    CounterHolder counterHolder = Provider.of<CounterHolder>(context);
+
+    int value = counterHolder.value;
+
     return Container(
       decoration: BoxDecoration(
         color: Colors.blue.withOpacity(0.1),
@@ -15,7 +21,7 @@ class _CounterWidgetState extends State<CounterWidget> {
       ),
       child: Center(
         child: Text(
-          '1',
+          '$value',
           style: TextStyle(
             fontSize: 68.0,
             fontWeight: FontWeight.w700,

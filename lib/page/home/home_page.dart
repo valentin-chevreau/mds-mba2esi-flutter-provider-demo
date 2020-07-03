@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider_demo/home/widget/add_remove_widget.dart';
-import 'package:provider_demo/home/widget/counter_widget.dart';
+import 'package:provider_demo/page/home/widget/add_remove_widget.dart';
+import 'package:provider_demo/page/home/widget/counter_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override

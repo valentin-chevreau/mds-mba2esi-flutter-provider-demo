@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:provider_demo/home/home_page.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_demo/page/home/home_page.dart';
+import 'package:provider_demo/provider/counter_holder.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,9 +10,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomePage(),
+    return ChangeNotifierProvider(
+      create: (_) => CounterHolder(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
     );
   }
 }
