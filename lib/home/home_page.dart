@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider_demo/home/widget/add_remove_widget.dart';
+import 'package:provider_demo/home/widget/counter_widget.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,10 +12,29 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Text('Provider Demo'),
       ),
-      body: Container(),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Spacer(
+            flex: 2,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).size.width / 2,
+                width: MediaQuery.of(context).size.width / 2,
+                child: CounterWidget(),
+              ),
+            ],
+          ),
+          Spacer(),
+          AddRemoveWidget(),
+          Spacer(),
+        ],
+      ),
     );
   }
 }
